@@ -1,0 +1,237 @@
+<html>
+
+<head>
+    <title>miniproject</title>
+    <style>
+        .header{
+            text-align: center;
+            margin-top:20px;
+        }
+        .button {
+            padding: 20px;
+            border-radius: 7px;
+            margin-top: 5px;
+
+
+
+        }
+
+        .equal {
+            padding: 20px;
+            border-radius: 7px;
+            background-color: blue;
+            color: white;
+
+        }
+
+        .container {
+            border: 2px solid gray;
+            border-radius:7px;
+            width: 17%;
+            padding: 20px;
+            margin: auto;
+        }
+    </style>
+    <script>
+        let operator = "", number1 = 0, number2 = 0;
+        function onOneClick() {
+            if (operator===""){
+                number1=number1===0 ? 1: `${number1}1`
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 1: `${number2}1`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onTwoClick() {
+            if (operator===""){
+                number1=number1===0 ? 2: `${number1}2`;
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 2: `${number2}2`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onThreeClick() {
+            if (operator===""){
+                number1=number1===0 ? 3: `${number1}3`;
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 3: `${number2}3`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onfourClick() {
+            if (operator===""){
+                number1=number1===0 ? 4: `${number1}4`;
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 4: `${number2}4`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onFiveClick() {
+            if (operator===""){
+                number1=number1===0 ? 5: `${number1}5`;
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 5: `${number2}5`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onsixClick() {
+            if (operator===""){
+                number1=number1===0 ? 6: `${number1}6`;
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 6: `${number2}6`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onSevenClick() {
+            if (operator===""){
+                number1=number1===0 ? 7: `${number1}7`;
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 7: `${number2}7`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onEightClick() {
+            if (operator===""){
+                number1=number1===0 ? 8: `${number1}8`
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 8: `${number2}8`
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        } 
+        function onNineClick() {
+            if (operator===""){
+                number1=number1===0 ? 9: `${number1}9`
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 9: `${number2}9`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onZeroClick(){
+            if (operator===""){
+                number1=number1===0 ? 0: `${number1}0`;
+                document.getElementById("result").innerText=`${number1}`;
+            }
+            else{
+                number2=number2===0 ? 0: `${number2}0`;
+                document.getElementById("result").innerText=`${number1} ${operator} ${number2}`;
+
+            }
+
+        }
+        function onPlusClick(){
+            operator="+";
+            document.getElementById("result").innerText=`${number1} ${operator}`;
+
+
+        }
+        function onMinusClick(){
+            operator="-";
+            document.getElementById("result").innerText=`${number1} ${operator}`;
+
+        }
+        function onMultiplyClick(){
+            operator="*";
+            document.getElementById("result").innerText=`${number1} ${operator}`;
+
+        }
+        function onDivideClick(){
+            operator="/";
+            document.getElementById("result").innerText=`${number1} ${operator}`;
+
+        }
+        function onEqualClick(){
+            let result;
+            switch(operator){
+                case("+"):
+                result=Number(number1)+Number(number2);
+                break;
+                case("-"):
+                result=Number(number1)-Number(number2);
+                break;
+                case("*"):
+                result=Number(number1)*Number(number2);
+                break;
+                case("/"):
+                result=Number(number1)/Number(number2);
+                break;
+
+            }
+            document.getElementById("result").innerText=`${number1} ${operator} ${number2}=${result}`;
+
+
+        }
+        function onClearClick(){
+            number1="";
+            number2="";
+            operator="";
+            document.getElementById("result").innerText="";
+
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1 class="header">Simple Calculator</h1>
+    <div class="container">
+        <div id="result"></div>
+        <button class="button" onclick="onOneClick()">1</button>
+        <button class="button" onclick="onTwoClick()">2</button>
+        <button class="button" onclick="onThreeClick()">3</button>
+        <button class="button" onclick="onfourClick()">4</button><br />
+        <button class="button" onclick="onFiveClick()">5</button>
+        <button class="button" onclick="onsixClick()">6</button>
+        <button class="button" onclick="onSevenClick()">7</button>
+        <button class="button" onclick="onEightClick()">8</button><br />
+        <button class="button" onclick="onNineClick()">9</button>
+        <button class="button" onclick="onZeroClick()">0</button>
+        <button class="button" onclick="onPlusClick()">+</button>
+        <button class="button" onclick="onMinusClick()">-</button><br />
+        <button class="button" onclick="onMultiplyClick()">*</button>
+        <button class="button" onclick="onDivideClick()">/</button>
+        <button class="equal" onclick="onEqualClick()">=</button>
+        <button class="button" onclick="onClearClick()">C</button>
+
+    </div>
+
+</body>
+
+</html>
