@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            let investedAmount,earnedAmount,result,percentage;
+            function CalculateClick(){
+                investedAmount=document.getElementById("investedAmount").value;
+                earnedAmount=document.getElementById("earnedAmount").value;
+                if( investedAmount> earnedAmount){
+                    result=investedAmount-earnedAmount;
+                    percentage=(result/investedAmount)*100
+                    document.getElementById("result").innerText=`loss:${result}`;
+                    document.getElementById("result").innerText=`${percentage.toFixed(2)}`;
+                }
+                else{
+                    result=earnedAmount-investedAmount;
+                    percentage=(result/earnedAmount)*100
+                    document.getElementById("result").innerText=`profit:${result}`;
+                    document.getElementById("result").innerText=`${percentage.toFixed(2)}`;
+
+
+                }
+
+            }
+            
+
+
+
+        </script>
+    </head>
+    <body>
+        <h1>Profit Loss Detection</h1>
+        <label>Invested Amount:</label><br/>
+        <input type="text" id="investedAmount" name="Invested Amount"><br/>
+        <label>Earned Amount:</label><br/>
+        <input type="text" id="earnedAmount" name="Earned Amount"><br/>
+        <button onclick="CalculateClick()">Calculate</button>
+        <div id="result"></div>
+
+    </body>
+</html>

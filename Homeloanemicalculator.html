@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <style>
+        .input-Amount {
+            padding: 10px;
+            border: radius 7px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .input-Tenure {
+            padding: 10px;
+            border: radius 7px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+
+        .input-Interest {
+            padding: 10px;
+            border: radius 7px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .Home {
+            text-align: center;
+        }
+
+        .EMI {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            width: 100%;
+            border: none;
+        }
+
+        .footer {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .Amount{
+            font-size:20px;
+            font-weight: bolder;
+        }
+    </style>
+    <script>
+        let LoanAmount, LoanTenure, AnnualInterestRate, TotalMonths, emi, interestAmount, TotalpaybleAmount;
+        function onCalculateEmi() {
+            LoanAmount = parseInt(document.getElementById("LoanAmount").value);
+            document.getElementById("principleAmount").innerText = `${LoanAmount}`;
+            LoanTenure = parseInt(document.getElementById("LoanTenure").value);
+            AnnualInterestRate = parseInt(document.getElementById("AnnualInterestRate").value);
+
+
+            TotalMonths = LoanTenure * 12;
+            console.log('TotalMonths: ', TotalMonths)
+
+            TotalpaybleAmount = LoanAmount * (AnnualInterestRate / 12 / 100) * TotalMonths;
+            console.log('TotalpaybleAmount: ', TotalpaybleAmount)
+            parseInt(document.getElementById("TotalpaybleAmount").innerText = `${TotalpaybleAmount}`);
+            interestAmount = TotalpaybleAmount - LoanAmount;
+            parseInt(document.getElementById("interestAmount").innerText = `${interestAmount}`);
+
+
+
+
+            emi = (LoanAmount * AnnualInterestRate / 12 / 100 * (1 + AnnualInterestRate / 12 / 100) ** TotalMonths) / ((1 + AnnualInterestRate / 12 / 100) ** TotalMonths - 1);
+            document.getElementById('result').innerText = `Monthly EMI: ${emi.toFixed(2)}`;
+
+
+
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <h1 class="Home">Home Loan EMI Calculator</h1>
+    <div class="section">
+        <div>
+            <label>Loan Amount</label><br />
+            <input class="input-Amount" type="text" id="LoanAmount" name="Amount"><br />
+            <label>Tenure (Years)</label><br />
+            <input class="input-Tenure" type="text" id="LoanTenure" name="Tenure"><br />
+            <label>Interest Rate (% P.A.)</label><br />
+            <input class="input-Interest" type="text" id="AnnualInterestRate" name="Interest"><br />
+            <button class="EMI" onclick="onCalculateEmi()">Calculate EMI</button>
+        </div>
+        <div>
+            <div class="footer" id="result"></div>
+            <label class="Amount">principle Amount</label>
+            <div class="footer" id="principleAmount"></div>
+            <label class="Amount">TotalpaybleAmount</label>
+            <div class="footer" id="TotalpaybleAmount"></div>
+            <label class="Amount">interestAmount</label>
+            <div class="footer" id="interestAmount"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
